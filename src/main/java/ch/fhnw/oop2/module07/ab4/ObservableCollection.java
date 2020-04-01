@@ -15,7 +15,8 @@ final class ObservableCollection extends VBox {
 	private Button shuffle;
 	private ToolBar toolBar;
 	private ListView<String> listView;
-	
+
+
 	ObservableCollection() {
 		initializeControls();
 		layoutControls();
@@ -27,8 +28,8 @@ final class ObservableCollection extends VBox {
 		
 		shuffle = new Button("Shuffle");
 		toolBar = new ToolBar(shuffle);
-		
-		listView = new ListView<>(observableList);	
+		shuffle.setOnAction(button -> FXCollections.shuffle(observableList));
+		listView = new ListView<>(observableList);
 	}
 	
 	private void layoutControls() {
